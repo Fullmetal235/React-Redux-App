@@ -16,6 +16,7 @@ export const getData = () => {
       })
       .catch(err => {
         dispatch({ type: FETCH_Ghibli_DATA_FAILURE, payload: err.response });
+        console.log(err);
       });
   };
 };

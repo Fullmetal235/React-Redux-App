@@ -8,9 +8,9 @@ import Ghibli from './Ghibli';
 
 const GhibliList = props => {
   return (
-    <>
-      <h1>Welcome to the WEB21 Ghibli app!</h1>
-      <button onClick={props.getData}>
+    <div>
+      <img src = "StudioGhibli.png" alt="StudioGhibli"/>
+      <button className='btn' onClick={props.getData}>
         {props.isLoading ? (
           <Loader type="tailspin" color="#00BFFF" height="15" width="100" />
         ) : (
@@ -18,8 +18,8 @@ const GhibliList = props => {
         )}
       </button>
       {props.Ghibli &&
-        props.Ghibli.map(cam => <Ghibli key={cam.name} Ghibli={cam} />)}
-    </>
+        props.Ghibli.map(item => <Ghibli key={item.id} Ghibli={item} />)}
+    </div>
   );
 };
 
